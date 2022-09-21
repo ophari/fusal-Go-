@@ -30,7 +30,7 @@ if (isset($_POST['submit'])) {
             header('location: welcome.php');
         } 
     }else{
-        echo "<script>alert('Username atau Password Salah, Silahkan di ulangi')</script>";
+        echo "<script>alert('username atau password salah, silahkan isi ulang')</script>";
     }
 }
 
@@ -48,20 +48,23 @@ if (isset($_POST['submit'])) {
     <style>
         body {
             font-family:sans-serif;
-            background-image: url("./asset/img/itachi.gif");
+            background-image: url("./asset/img/futsal.jpg");
             background-size: cover;
             background-repeat: no-repeat;
         }
         .kotak_login {
             width: 350px;
-            background: white;
+            background: #6290c8;
             margin: 80px auto;
             padding: 30px 20px;
+            border-radius: 30px;
         }
         .judul {
             text-align: center;
             text-transform: uppercase;
             font-weight: bold;
+            color: white;
+            font-size: 18pt;
         }
         .input_form {
             box-sizing: border-box;
@@ -69,12 +72,12 @@ if (isset($_POST['submit'])) {
             padding: 10px;
             font-size: 11pt;
             margin-bottom: 20px;
-            border-color: pink;
+            border-color: #1d3461;
             border-radius: 10px;       
         }
         .tombol_login {
-            background-color: lightblue;
-            color: green;
+            background-color: #1f487e;
+            color: white;
             font-size: 11pt;
             width: 100%;
             border: none;
@@ -82,7 +85,7 @@ if (isset($_POST['submit'])) {
             padding:10px 20px ;
         }
         .link {
-            color: red;
+            color: white;
             text-decoration: none;
             font-size: 11pt;
         }
@@ -107,7 +110,7 @@ if (isset($_POST['submit'])) {
                 <br><br>
                 <button class="tombol_login" name="submit" class="btn">Login</button>
 
-                <p class="text">anda belum ada akun ? <a href="./form/registrasi.php" class="link">register</a></p>
+                <p class="text">Anda belum ada akun? <a href="./form/registrasi.php" class="link">Register</a></p>
             </form>
         </div>
      <!-- </div> -->

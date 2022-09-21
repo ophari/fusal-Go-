@@ -8,12 +8,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data pembayaran</title>
+    <title>Data Pembayaran</title>
     <style>
         .form{
-            background-color: #CDF0EA;
+            background-color: #6290c8;
             padding: 20px;
-            border-radius: 5px;
         }
         body{
             padding: 0;
@@ -32,7 +31,7 @@
             width: 100%;
             padding: 14px 20px;
             margin: 8px 0;
-            background-color: #ccc;
+            background-color: #1d3461;
             border: none;
             border-radius: 5px;
             cursor: pointer;
@@ -44,11 +43,9 @@
         .menu{
             list-style-type: none;
             overflow: hidden;
-            background-color: lightblue;
+            background-color: #1f487e;
             margin: 0 ;
-            padding: 0;
-            
-            
+            padding: 0;       
         }
         .menu-list{
             float: left;
@@ -62,53 +59,53 @@
             font-size: 20px;
         }
         .menu-list a:hover {
-            background-color: gray;
+            background-color: #1d3461;
         }
         .judul{
-            width: 100%;
             padding: 1px 20px;
-            background-color: #CDF0EA;
+            background-color: #6290c8;
         }
     </style>
 </head>
 <body>
     <ul class="menu">
         <li class="menu-list"><a href="welcome.php">Home</a></li>
-        <li class="menu-list"><a href="data_pembayaran.php">pembayaran</a></li>
+        <li class="menu-list"><a href="data_lapangan.php">Isi Data Lapangan</a></li>
         <li class="menu-list"> <a href="../logout.php"Logout></a></li>
     </ul>
     <div class="judul">
-    <h1>silahkan isi bidang di bawah ini</h1>
+    <h1>Silahkan isi formulir di bawah ini</h1>
     </div>
     <form class="form" action="../input/input_data_pembayaran.php" method="post">
-    <label for="">id pembayaran</label><br>
+    <label for="">Id Pembayaran</label><br>
     <input type="text" name ="id_pembayaran" id="" value="<?= rand(0000, 9999)?>" readonly>
     <br><br>
-    <label for="">id pendaftar</label><br>
+    <label for="">Id Pendaftar</label><br>
     <input type="text" name ="id_pendaftar" id="">
     <br><br>
-    <label for="">jenis lapangan</label><br>
+    <label for="">Jenis Lapangan</label><br>
     <select name="jenis_lapangan" id="">
-        <option value="a">lapangan a (matras)</option>
-        <option value="b">lapangan b (sistetis)</option>
-        <option value="c">lapangan c (vinyl)</option>
+        <option value="a">Lapangan A (Matras)</option>
+        <option value="b">Lapangan B (Sistetis)</option>
+        <option value="c">Lapangan C (Vinyl)</option>
     </select>
     <br><br>
-    <label for="">jenis pembayaran</label>
+    <label for="">Jenis Pembayaran</label>
     <select name="jenis_pembayaran" id="">
-        <option value="cash">cash</option>
-        <option value="transfer">transfer</option>
+        <option value="cash">Cash</option>
+        <option value="transfer">Transfer</option>
     </select>
     <br><br>
-    <label for="">nominal pembayaran</label><br>
+    <label for="">Nominal Pembayaran</label><br>
     <input type="text" name="nominal_pembayaran" id="">
     <br><br>
+    <label for="">Status Pembayaran</label><br>
     <select name="status_pembayaran" id="">
         <option value="...">...</option>
-        <option value="lunas">lunas</option>
+        <option value="lunas">Lunas</option>
     </select>
-
-        <button type="submit">kirim</button>
+    <br><br>
+        <button type="submit">KIRIM</button>
     </form>
     
 </body>

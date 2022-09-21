@@ -10,9 +10,8 @@
     <title>form pendaftar</title>
     <style>
         .form{
-            background-color: #CDF0EA;
+            background-color: #6290c8;
             padding: 20px;
-            border-radius: 5px;
         }
         body{
             padding: 0;
@@ -31,7 +30,7 @@
             width: 100%;
             padding: 14px 20px;
             margin: 8px 0;
-            background-color: #ccc;
+            background-color: #1f487e;
             border: none;
             border-radius: 5px;
             cursor: pointer;
@@ -43,7 +42,7 @@
         .menu{
             list-style-type: none;
             overflow: hidden;
-            background-color: lightblue;
+            background-color: #1f487e;
             margin: 0 ;
             padding: 0;
             
@@ -61,60 +60,58 @@
             font-size: 20px;
         }
         .menu-list a:hover {
-            background-color: gray;
+            background-color: #1d3461;
         }
         .judul{
-            width: 100%;
             padding: 1px 20px;
-            background-color: #CDF0EA;
+            background-color: #6290c8;
         }
     </style>
 </head>
 <body>
     <ul class="menu">
         <li class="menu-list"><a href="../welcome.php">Home</a></li>
-        <li class="menu-list"><a href="./pendaftar.php">Pendaftar</a> </li>
         <li class="menu-list"><a href="../logout.php">Logout</a></li>
     </ul>
     <div class="judul">
-    <h1>silahkan isi bidang di bawah ini</h1>
+    <h1>Silahkan isi formulir di bawah ini!</h1>
     </div>
 
     <form class="form" action="../input/input_data_pendaftar.php" method="post">
 
-        <label for="">Id pendaftar</label><br> 
+        <label for="">Id Pendaftar</label><br> 
         <input type="text" name="id_pendaftar" id="" value="<?= rand(0000, 9999)?>" readonly>
         <br><br>
-        <label for="">nama pendaftar</label> <br>
+        <label for="">Nama Pendaftar</label> <br>
         <input type="text" name="nama_pendaftar" id="">
         <br><br>
-        <label for="">nomor hp</label><br>
+        <label for="">Nomor Hp</label><br>
         <input type="text" name="nomor_hp" id="">
         <br><br>
-        <label for="">alamat</label><br>
+        <label for="">Alamat</label><br>
         <textarea name="alamat" id="" cols="50" rows="10"></textarea>
         <br><br>
-        <label for="">jenis lapangan</label><br>
+        <label for="">Jenis Lapangan</label><br>
         <select name="jenis_lapangan" id="">
-            <option value="a">Langan A (matras)</option>
-            <option value="b">Lapangan B (sintetis)</option>
-            <option value="c">Lapangan c (vinnyl</option>
+            <option value="a">Lapangan A (Matras)</option>
+            <option value="b">Lapangan B (Sintetis)</option>
+            <option value="c">Lapangan C (Vinnyl</option>
         </select>
         <br><br>
-        <label for="">jam mulai</label><br>
+        <label for="">Jam Mulai</label><br>
         <input type="time" name="jam_mulai" id="">
         <br><br>
-        <label for="">jam selesai</label><br>
+        <label for="">Jam Selesai</label><br>
         <input type="time" name="jam_selesai" id="">
         <br><br>
-        <label for="">jenis pembayaran</label>
+        <label for="">Jenis Pembayaran</label>
         <select name="jenis_pembayaran" id="">-
-            <option value="cash">cash</option>
+            <option value="cash">Cash</option>
             <option value="Transfer">Transfer</option>
         </select>
         <br><br>
 
-        <button type="submit">kirim</button>
+        <button type="submit">KIRIM</button>
         
     </form>
 </body>

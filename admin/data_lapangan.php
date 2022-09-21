@@ -9,13 +9,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data lapangan</title>
     <style>
-    .form{
-            background-color: #CDF0EA;
+        .form{
+            background-color: #6290c8;
             padding: 20px;
-            border-radius: 5px;
         }
         body{
-            background-color: #CDF0EA;
             padding: 0;
             margin: 0;
         }
@@ -32,7 +30,7 @@
             width: 100%;
             padding: 14px 20px;
             margin: 8px 0;
-            background-color: #ccc;
+            background-color: #1f487e;
             border: none;
             border-radius: 5px;
             cursor: pointer;
@@ -44,9 +42,9 @@
         .menu{
             list-style-type: none;
             overflow: hidden;
-            background-color: lightblue;
+            background-color: #1f487e;
             margin: 0 ;
-            padding: 0;
+            padding: 0;       
             
             
         }
@@ -62,12 +60,11 @@
             font-size: 20px;
         }
         .menu-list a:hover {
-            background-color: gray;
+            background-color: #1d3461;
         }
         .judul{
-            width: 100%;
             padding: 1px 20px;
-            background-color: #CDF0EA;
+            background-color: #6290c8;
         }
         </style>
 </head>
@@ -77,7 +74,7 @@
         <li class="menu-list"><a href="../logout.php">Logout</a></li>
     </ul>
     <div class="judul">
-    <h1>silahkan isi data lapangan</h1>
+    <h1>Silahkan isi data lapangan</h1>
     </div>
      <form class="form" action="../input/input_data_lapangan.php" method="post">
         <label for="">Id lapangan</label><br>
@@ -85,9 +82,9 @@
         <br><br>
         <label for="">jenis lapangan</label><br>
         <select name="jenis_lapangan" id="">
-            <option value="a">Langan A (matras)</option>
-            <option value="b">Lapangan B (sintetis)</option>
-            <option value="c">Lapangan c (vinnyl</option>
+            <option value="a">lapangan a (matras)</option>
+            <option value="b">lapangan b (sintetis)</option>
+            <option value="c">lapangan c (vinnyl</option>
         </select>
         <br><br>
         <label for="">type lapangan</label><br>
@@ -97,7 +94,7 @@
         </select>
         <br><br>
 
-        <button type="submit">kirim data</button>
+        <button type="submit">KIRIM</button>
      </form>
 </body>
 </html>
