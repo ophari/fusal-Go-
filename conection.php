@@ -2,7 +2,7 @@
     $host ="localhost";
     $user ="root";
     $pass ="";
-    $database ="rpllapangan";
+    $database ="futsal_go";
     //futsal_go for master
 
     $koneksi = mysqli_connect($host,$user,$pass,$database);

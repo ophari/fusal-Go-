@@ -23,7 +23,7 @@ if (isset($_POST['submit'])) {
             $_SESSION['username'] = $row['username'];
             $_SESSION['hak_akses'] = $row['hak_akses'];
             header('location: ./admin/welcome.php');
-        }elseif($row['hak_akses'] == '9'){
+        }elseif($row['hak_akses'] == '0'){
             #code
             $_SESSION['username'] = $row['username'];
             $_SESSION['hak_akses'] = $row['hak_akses'];

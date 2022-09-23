@@ -27,7 +27,7 @@
         }
         body {
             font-family:sans-serif;
-            background-image: url("../asset/img/uwu.jpg");
+            background-image: url("../asset/img/futsal.jpg");
             background-size: cover;
             background-repeat: no-repeat;
         }
@@ -36,27 +36,42 @@
             background: white;
             margin: 80px auto;
             padding: 30px 20px;
+            text-align: center;
+            border-radius: 10px;
+            background-color: #6290c8;
+        }
+        .input_form {
+            box-sizing: border-box;
+            width: 100%;
+            padding: 10px;
+            font-size: 11pt;
+            margin-bottom: 20px;
+            border-color: #1d3461;
+            border-radius: 10px;       
         }
         .judul {
             text-align: center;
             text-transform: uppercase;
             font-weight: bold;
         }
+        .kotak_login p{
+            text-align: left;
+        }
     </style>
 <body>
     <h1 class="judul">welcome to registrasi</h1>
 
     <form class="kotak_login" action="" method="post">
-
        
-                
-                <input type="text" placeholder="username" name="username" required><br>
+                <input class="input_form" type="text" placeholder="id user" name="id_user" id="" value="<?= rand(0000, 9999)?>" readonly><br>
                 <br>
-                <input type="password" placeholder="password" name="password" required><br>
+                <input class="input_form" type="text" placeholder="Username" name="username" required><br>
                 <br>
-                <input type="password" placeholder="konfirmasi password" name="password2" required><br>
+                <input class="input_form" type="password" placeholder="Password" name="password" required><br>
                 <br>
-           
+                <input class="input_form" type="password" placeholder="konfirmasi password" name="password2" required><br>
+                <br>
+
                 <button type="submit" name="register">register</button>
         <p><a href="../index.php">sudah memiliki akun</a></p>
     </form>
