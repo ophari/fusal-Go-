@@ -1,5 +1,5 @@
 # fusal-Go-
-apss for futsal
+apps for futsal
 
 # my team
 1. Muhamad Yusuf
