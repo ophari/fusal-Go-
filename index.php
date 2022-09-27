@@ -14,7 +14,8 @@ if (isset($_POST['submit'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    $query = "call login('$username','$password')";
+    // $query = "call login('$username','$password')";
+    $query = "SELECT * FROM login WHERE username='$username' AND password='$password'";
     $result = mysqli_query($koneksi, $query);
     if ($result->num_rows > 0) {
         $row = mysqli_fetch_assoc($result);

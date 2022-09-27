@@ -18,6 +18,6 @@
         header('location: ../welcome.php');
     }
     else{
-        echo "<script>alert('gagal input data lapangan)</script>";
+        echo "<script>alert('gagal input data lapangan')</script>";
     }
 ?>
