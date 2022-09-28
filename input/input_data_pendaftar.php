@@ -15,7 +15,12 @@
     jenis_pembayaran ='$jenis_pembayaran'");
 
     if($insert == true){
-        header('location: ../welcome.php');
+        $message = 'pesanan anda sudah masuk terimakasih';
+    echo "<SCRIPT> //not showing me this
+        alert('$message')
+        window.location.replace('../welcome.php');
+    </SCRIPT>";
+    
     }
     else{
         echo "<script>alert('gagal input data lapangan')</script>";

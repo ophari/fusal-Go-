@@ -108,6 +108,8 @@
         <select name="jenis_pembayaran" id="">-
             <option value="cash">Cash</option>
             <option value="Transfer">Transfer</option>
+            <option value="ovo">ovo</option>
+            <option value="gopay">gopay</option>
         </select>
         <br><br>
 

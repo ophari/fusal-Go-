@@ -93,7 +93,10 @@
     <label for="">Jenis Pembayaran</label>
     <select name="jenis_pembayaran" id="">
         <option value="cash">Cash</option>
-        <option value="transfer">Transfer</option>
+        <option value="BRI">BCA</option>
+        <option value="BRI">BRI</option>
+        <option value="OVO">OVO</option>
+        <option value="Gopay">Gopay</option>
     </select>
     <br><br>
     <label for="">Nominal Pembayaran</label><br>

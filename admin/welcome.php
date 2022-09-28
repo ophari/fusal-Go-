@@ -80,6 +80,7 @@
     <ul class="menu">
         <li class="menu-list"><a href="data_lapangan.php">Isi Data Lapangan</a></li>
         <li class="menu-list"><a href="data_pembayaran.php">Update Pembayaran</a></li>
+        <li class="menu-list"><a href="data_penyewa.php">Data pendaftar</a></li>
         <li class="menu-list">  <a href="../logout.php">Logout</a></li>
     </ul>
     <div class="jumbotron">
