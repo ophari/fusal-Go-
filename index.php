@@ -93,6 +93,7 @@ if (isset($_POST['submit'])) {
         .text{
             text-align: center;
         }
+
     </style>
 </head>
 <body>
