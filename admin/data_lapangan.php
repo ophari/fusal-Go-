@@ -7,94 +7,106 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data lapangan</title>
-    <style>
-        .form{
-            background-color: #6290c8;
-            padding: 20px;
-        }
-        body{
-            padding: 0;
-            margin: 0;
-        }
-        input,textarea,select{
-            width: 100%;
-            padding: 12px 20px;
-            margin: 8px 0;
-            display: inline-block;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-        button{
-            width: 100%;
-            padding: 14px 20px;
-            margin: 8px 0;
-            background-color: #1f487e;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            color: white;
-            font-weight: 800;
-        }
+    <title>Table Lapangan</title>
+</head>
+<style>    
+    body{
+        margin: 0;
+        padding: 0;
+        background-color: #6290c8;
+        text-decoration: none;
+    }
+    .table{
+        font-family: arial, helvetica, sans-serif; 
+        border-collapse: collapse;
+        font-size: 17pt;
+        border: 1px solid #cccccc;
+    }
+    td {
+        padding: 6px;
+        height: 25px;
+        color: white;
+    }
+    td a {
+        color: white;
+    }
+    th {
+        padding: 3px;
+        background-color: steelblue;
+        color: white;
+        height: 50px;
+        width: 150px;
+    }
+    .form{
+        padding: 20px;
+        border-radius: 5px;
 
-        .menu{
+    }
+    
+    .menu{
             list-style-type: none;
             overflow: hidden;
             background-color: #1f487e;
-            margin: 0 ;
-            padding: 0;       
-            
-            
+            padding: 0;
+            margin: 0;
         }
-        .menu-list{
+    .menu-list{
             float: left;
-        }
-        .menu-list a {
+            font-size: 13px;
+            background-color: #1f487e;
+        } 
+    .menu-list a {
             display: block;
             color: white;
-            padding: 14px 20px;
             text-align: center;
+            padding: 14px 16px;
             text-decoration: none;
-            font-size: 20px;
+            font-size: 24px;
         }
-        .menu-list a:hover {
-            background-color: #1d3461;
+    .menu-list a:hover{
+            background-color: black;
         }
         .judul{
+            width: 100;
             padding: 1px 20px;
-            background-color: #6290c8;
+            background-color: #123c69;
+            color: white;
+            text-align: center;
         }
-        </style>
-</head>
+    </style>
 <body>
-    <ul class="menu">
-        <li class="menu-list"><a href="welcome.php">Home</a></li>
+<ul class="menu">
+        <li class="menu-list"><a href="../admin/welcome.php">Home</a></li>
         <li class="menu-list"><a href="../logout.php">Logout</a></li>
     </ul>
-    <div class="judul">
-    <h1>Silahkan isi data lapangan</h1>
-    </div>
-     <form class="form" action="../input/input_data_lapangan.php" method="post">
-        <label for="">Id lapangan</label><br>
-        <input type="text" name="id_lapangan" id="" value="<?= rand(0000, 9999)?>" readonly>
-        <br><br>
-        <label for="">jenis lapangan</label><br>
-        <select name="jenis_lapangan" id="">
-            <option value="a">lapangan a (matras)</option>
-            <option value="b">lapangan b (sintetis)</option>
-            <option value="c">lapangan c (vinnyl</option>
-        </select>
-        <br><br>
-        <label for="">type lapangan</label><br>
-            <select name="type_lapangan" id="">matras
-            <option value="sintetis">sintetis</option>
-            <option value="vinyl">vinyl</option>
-        </select>
-        <br><br>
+    <div class="judul"><h1>Table lapangan</h1></div>
+    <form class= "form">
 
-        <button type="submit">KIRIM</button>
-     </form>
-</body>
+    <table class="table" border="1" align="center">
+<tr>
+            <th style="text-align:center">Id pendaftar</th>
+            <th style="text-align:center">Jenis lapangan</th>
+            <th style="text-align:center">Jam mulai</th>
+            <th style="text-align:center">Jam akhir</th>
+            <th style="text-align:center">Action</th>
+        </tr>
+    <?php
+    $query = mysqli_query($koneksi, "SELECT * FROM data_pendaftar");
+    while ($data=mysqli_fetch_array($query)){?>
+        <tr>
+            <td style="text-align:center"><?php echo $data['id_pendaftar'] ?></td>
+            <td style="text-align:center"><?php echo $data['jenis_lapangan'] ?></td>
+            <td style="text-align:center"><?php echo $data['jam_mulai'] ?></td>
+            <td style="text-align:center"><?php echo $data['jam_selesai'] ?></td>
+            <td style="text-align:center">
+                <a href="edit.php?id=<?php echo $data['id_pendaftar']?>">Edit</a>
+                <a class="delete" href="delete.php?id=<?php echo $data['id']?>">Delete</a>
+            </td> 
+        </tr>
+    <?php }
+    ?>
+
+</table> </td>
+</tr>
+</table> </body>
 </html>

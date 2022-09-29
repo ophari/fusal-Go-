@@ -10,7 +10,7 @@
         $message = 'data sudah masuk';
         echo "<SCRIPT> //not showing me this
             alert('$message')
-            window.location.replace('../welcome.php');
+            window.location.replace('../admin/welcome.php');
         </SCRIPT>";
     }
     else{
