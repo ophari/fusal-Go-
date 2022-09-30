@@ -78,10 +78,10 @@
 </head>
 <body>
     <ul class="menu">
-        <li class="menu-list"><a href="data_lapangan.php">Isi Data Lapangan</a></li>
-        <li class="menu-list"><a href="data_pembayaran.php">Update Pembayaran</a></li>
-        <li class="menu-list"><a href="data_penyewa.php">Data pendaftar</a></li>
-        <li class="menu-list">  <a href="../logout.php">Logout</a></li>
+        <li class="menu-list"><a href="data_lapangan.php">Data Lapangan</a></li>
+        <li class="menu-list"><a href="data_pembayaran.php">Data pembayaran</a></li>
+        <li class="menu-list"><a href="data_pendaftar.php">Data pendaftar</a></li>
+        <li class="menu-list"><a href="../logout.php">Logout</a></li>
     </ul>
     <div class="jumbotron">
         <div class="container">

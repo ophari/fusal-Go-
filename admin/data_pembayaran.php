@@ -1,45 +1,19 @@
 <?php
     include "../conection.php";
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Pembayaran</title>
+    <title>Document</title>
     <style>
-        .form{
-            background-color: #6290c8;
-            padding: 20px;
-        }
         body{
-            padding: 0;
+            background-color: #D6E9E7;
             margin: 0;
+            padding: 0;
         }
-        input,textarea,select{
-            width: 100%;
-            padding: 12px 20px;
-            margin: 8px 0;
-            display: inline-block;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-        button{
-            width: 100%;
-            padding: 14px 20px;
-            margin: 8px 0;
-            background-color: #1d3461;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            color: white;
-            font-weight: 800;
-        }
-
         .menu{
             list-style-type: none;
             overflow: hidden;
@@ -47,10 +21,13 @@
             margin: 0 ;
             padding: 0;       
         }
+       
         .menu-list{
             float: left;
+
         }
-        .menu-list a {
+        .menu-list a{
+            font-family: Ovo;
             display: block;
             color: white;
             padding: 14px 20px;
@@ -58,58 +35,56 @@
             text-decoration: none;
             font-size: 20px;
         }
-        .menu-list a:hover {
+        .menu-list a:hover{
             background-color: #1d3461;
         }
-        .judul{
-            padding: 1px 20px;
-            background-color: #6290c8;
+        h1{
+            
+            text-align: center;
+            font-family: Ovo;
         }
     </style>
 </head>
 <body>
     <ul class="menu">
-        <li class="menu-list"><a href="welcome.php">Home</a></li>
-        <li class="menu-list"><a href="data_lapangan.php">Isi Data Lapangan</a></li>
-        <li class="menu-list"> <a href="../logout.php"Logout></a></li>
+        <li class="menu-list"> <a href="../admin/welcome.php">Back to home</a></li>
+        <li class="menu-list"> <a href="#">Tambah data</a></li>
+        
     </ul>
-    <div class="judul">
-    <h1>Silahkan isi formulir di bawah ini</h1>
-    </div>
-    <form class="form" action="../input/input_data_pembayaran.php" method="post">
-    <label for="">Id Pembayaran</label><br>
-    <input type="text" name ="id_pembayaran" id="" value="<?= rand(0000, 9999)?>" readonly>
-    <br><br>
-    <label for="">Id Pendaftar</label><br>
-    <input type="text" name ="id_pendaftar" id="">
-    <br><br>
-    <label for="">Jenis Lapangan</label><br>
-    <select name="jenis_lapangan" id="">
-        <option value="a">Lapangan A (Matras)</option>
-        <option value="b">Lapangan B (Sistetis)</option>
-        <option value="c">Lapangan C (Vinyl)</option>
-    </select>
-    <br><br>
-    <label for="">Jenis Pembayaran</label>
-    <select name="jenis_pembayaran" id="">
-        <option value="cash">Cash</option>
-        <option value="BRI">BCA</option>
-        <option value="BRI">BRI</option>
-        <option value="OVO">OVO</option>
-        <option value="Gopay">Gopay</option>
-    </select>
-    <br><br>
-    <label for="">Nominal Pembayaran</label><br>
-    <input type="text" name="nominal_pembayaran" id="">
-    <br><br>
-    <label for="">Status Pembayaran</label><br>
-    <select name="status_pembayaran" id="">
-        <option value="...">...</option>
-        <option value="lunas">Lunas</option>
-    </select>
-    <br><br>
-        <button type="submit">KIRIM</button>
-    </form>
-    
+    <h1>Table Pembayaran</h1>
+    <table border="1" align="center" cellpadding = "10" cellspacing ="1">
+        <tr>
+            <th align="center">id</th>
+            <th align="center">id pembayaran</th>
+            <th align="center">id pendaftar</th>
+            <th align="center">jenis lapangan</th>
+            <th align="center">jenis pembayaran</th>
+            <th align="center">nominal pembayaran</th>
+            <th align="center">status pembayaran</th>
+            <th align="center">action</th>
+        </tr>
+        <?php
+            $query = mysqli_query($koneksi, "SELECT * FROM data_pembayaran");
+            while($data = mysqli_fetch_array($query)){ ?>
+            <tr>
+                <td align="center"><?= $data['id'];?></td>
+                <td align="center"><?= $data['id_pembayaran'];?></td>
+                <td align="center"><?= $data['id_pendaftar'];?></td>
+                <td align="center"><?= $data['jenis_lapangan'];?></td>
+                <td align="center"><?= $data['jenis_pembayaran'];?></td>
+                <td align="center"><?= $data['nominal_pembayaran'];?></td>
+                <td align="center"><?= $data['status_pembayaran'];?></td>
+                <td style="text-align:center">
+                <a href="../edit/edit_pembayaran.php?id=<?php echo $data['id_pembayaran']?>">Edit</a>
+                <a class="delete" href="../delete/delete_pembayaran.php?id=<?php echo $data['id']?>">Delete</a>
+            </td> 
+            </tr>
+        <?php }
+    ?>
+        </table>
+        <tr>
+            <td></td>
+        </tr>
+    </table>
 </body>
 </html>

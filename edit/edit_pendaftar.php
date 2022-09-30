@@ -56,13 +56,19 @@
         <?php
         while ($data = mysqli_fetch_array($select)){
             ?>
-    <form action="update_data.php" value="id"  method="post">
+    <form action="../update/update_data_pendaftar.php" value="id"  method="post">
     <div class="row mb-3">
             
-            
+                <label for="">Id Pendaftar</label>
                 <input type="text"  name="id_pendaftar" value="<?php echo $data['id_pendaftar'] ?>" readonly>
-                <input type="text" placeholder="jenis lapangan" name="jenis_lapangan" value="<?php echo $data['jenis_lapangan'] ?>">
+                <label for=""></label>
+                <select name="jenis_lapangan" id="">
+                <option value="A">Lapangan A (Matras)</option>
+                <option value="B">Lapangan B (Sintetis)</option>
+                <option value="C">Lapangan C (Vinyl)</option>
+                </select>
                 <input type="time" placeholder="jam mulai" name="jam_mulai" value="<?php echo $data['jam_mulai'] ?>">
+                <label for=""></label>
                 <input type="time" placeholder="jam selesai" name="jam_selesai" value="<?php echo $data['jam_selesai'] ?>">
 
             <button type="submit" class="col-sm-3 col-form-label">Kirim</button>

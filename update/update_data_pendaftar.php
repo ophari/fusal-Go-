@@ -7,7 +7,12 @@
 
     $update = mysqli_query($koneksi, "UPDATE data_pendaftar SET jenis_lapangan='$jenis_lapangan', jam_mulai='$jam_mulai', jam_selesai='$jam_selesai' WHERE id_pendaftar=$id_pendaftar");
     if($update){
-        header('location: data_lapangan.php');
+        $message = 'data sudah di rubah';
+    echo "<SCRIPT> //not showing me this
+        alert('$message')
+        window.location.replace('../admin/data_pendaftar.php');
+    </SCRIPT>";
+        
     } else {
         echo "<script>alert('Gagal input data pendaftar')</script>";
     }

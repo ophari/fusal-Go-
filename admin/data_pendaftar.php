@@ -65,6 +65,7 @@ include "../conection.php"
             <th align="center">Jam Mulai</th>
             <th align="center">Jam Selesai</th>
             <th align="center">Jenis Pembayaran</th>
+            <th align="center">action</th>
         </tr>
         <?php
             $query = mysqli_query($koneksi, "SELECT * FROM data_pendaftar");
@@ -79,6 +80,10 @@ include "../conection.php"
                 <td align="center"><?= $data['jam_mulai'];?></td>
                 <td align="center"><?= $data['jam_selesai'];?></td>
                 <td align="center"><?= $data['jenis_pembayaran'];?></td>
+                <td style="text-align:center">
+                <a href="../edit/edit_pendaftar.php?id=<?php echo $data['id_pendaftar']?>">Edit</a>
+                <a class="delete" href="../delete/delete_pendaftar.php echo $data['id']?>">Delete</a>
+            </td> 
             </tr>
         <?php }
     ?>
