@@ -48,7 +48,7 @@ include "../conection.php"
 <body>
     <ul class="menu">
         <li class="menu-list"> <a href="../admin/welcome.php">Home</a></li>
-        <li class="menu-list"> <a href="../logout.php">Logout</a></li>
+        <li class="menu-list"><a href="../form/admin_pendaftar.php">tambah data</a></li>
     </ul>
     
    <br><br>
@@ -65,6 +65,7 @@ include "../conection.php"
             <th align="center">Jam Mulai</th>
             <th align="center">Jam Selesai</th>
             <th align="center">Jenis Pembayaran</th>
+            <th align="center">nominal pembayaran</th>
             <th align="center">action</th>
         </tr>
         <?php
@@ -80,9 +81,10 @@ include "../conection.php"
                 <td align="center"><?= $data['jam_mulai'];?></td>
                 <td align="center"><?= $data['jam_selesai'];?></td>
                 <td align="center"><?= $data['jenis_pembayaran'];?></td>
+                <td align="center"><?= $data['nominal_pembayaran'];?></td>
                 <td style="text-align:center">
                 <a href="../edit/edit_pendaftar.php?id=<?php echo $data['id_pendaftar']?>">Edit</a>
-                <a class="delete" href="../delete/delete_pendaftar.php echo $data['id']?>">Delete</a>
+                <a class="delete" href="../delete/delete_pendaftar.php?id=<?php echo $data['id']?>">Delete</a>
             </td> 
             </tr>
         <?php }

@@ -1,8 +1,6 @@
 <?php
     include "../conection.php";
-    $id = $_GET['id'];
-    $select = mysqli_query($koneksi, "SELECT * FROM data_pembayaran WHERE id_pembayaran='$id'");
-    ?>
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,19 +12,14 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
     
     <style>
-    body{
-            background-color: #D6E9E7;
-            margin: 0;
+   .form{
+            background-color: #6290c8;
+            padding: 20px;
+        }
+        body{
             padding: 0;
+            margin: 0;
         }
-        .menu{
-            list-style-type: none;
-            overflow: hidden;
-            background-color: #1f487e;
-            margin: 0 ;
-            padding: 0;       
-        }
-        
         input,textarea,select{
             width: 100%;
             padding: 12px 20px;
@@ -36,13 +29,32 @@
             border-radius: 4px;
             box-sizing: border-box;
         }
-       
+        button{
+            width: 100%;
+            padding: 14px 20px;
+            margin: 8px 0;
+            background-color: #1f487e;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            color: white;
+            font-weight: 800;
+        }
+
+        .menu{
+            list-style-type: none;
+            overflow: hidden;
+            background-color: #1f487e;
+            margin: 0 ;
+            padding: 0;
+            
+            
+        }
         .menu-list{
             float: left;
-
         }
-        .menu-list a{
-            font-family: Ovo;
+        .menu-list a {
             display: block;
             color: white;
             padding: 14px 20px;
@@ -50,57 +62,55 @@
             text-decoration: none;
             font-size: 20px;
         }
-        .menu-list a:hover{
+        .menu-list a:hover {
             background-color: #1d3461;
         }
-        h1{
-            
-            text-align: center;
-            font-family: Ovo;
+        .judul{
+            padding: 1px 20px;
+            background-color: #6290c8;
         }
+    </style>
     </style>
 
 </head>
 <body>
-
-    <div class="container my-5">
-        <h2>Edit Data</h2>
-        <?php
-        while ($data = mysqli_fetch_array($select)){
-            ?>
-    <form action="../update/update_data_pembayaran.php" value="id"  method="post">
+        <ul class="menu">
+            <li class="menu-list"><a href="../admin/data_pembayaran.php">Home</a></li>
+        </ul>
+    
+            
+    <form  class="form" action="../input/input_data_pembayaran.php" value="id"  method="post">
     <div class="row mb-3">
             
                 <label for="">Id Pembayaran</label>
-                <input type="text"  name="id_pembayaran" value="<?php echo $data['id_pembayaran'] ?>" readonly>
-
+                <input type="text"  name="id_pembayaran" value="<?= rand(0000, 9999)?>" readonly>
                 <label for="">id pendaftar</label>
-                <input type="text" placeholder="id_pendaftar" name="id_pendaftar" value="<?php echo $data['id_pendaftar'] ?>" readonly>
-
+                <input type="text" placeholder="id_pendaftar" name="id_pendaftar" value="<?= rand(0000, 9999)?>" readonly>
                 <label for="">jenis lapangan</label>
-                <select name="jenis_lapangan" value="<?php echo $data['jenis_lapangan'] ?>">
+                <select name="jenis_lapangan">
                 <option value="A (Matras)">Lapangan A (Matras)</option>
                 <option value="B (Sintetis)">Lapangan B (Sintetis)</option>
                 <option value="C (Vinyl)">Lapangan C (Vinyl)</option>
                 </select>
-                
                 <label for="">jenis pembayaran</label>
-                <select name="jenis_pembayaran" value="<?php echo $data['jenis_pembayaran'] ?>">
+                <select name="jenis_pembayaran" >
                 <option value="cash">Cash</option>
                 <option value="Transfer">Transfer</option>
                 <option value="ovo">ovo</option>
                 <option value="gopay">gopay</option>
                 </select>
-
                 <label for="">Rupiah</label>
-                <input type="text" name="nominal_pembayaran" id="dengan-rupiah" value="<?php echo $data['nominal_pembayaran'] ?>"/>
+                <input type="text" name="nominal_pembayaran" id="dengan-rupiah">
              
                 
                 <label for="">status_pembayaran</label>
-                <select name="status_pembayaran" id="" value="<?php echo $data['status_pembayaran'] ?>">
+                <select name="status_pembayaran" id="">
                 <option value="...">...</option>
                 <option value="lunas">Lunas</option>
                 </select>
+               
+               
+
 
             <button type="submit" class="col-sm-3 col-form-label">Kirim</button>
             </div>
@@ -110,10 +120,6 @@
           </div>
         </form>
     </div>
-    <?php
-    break;
-    }
-    ?>
-    <script src="../function/rupiah.js"></script>
+<script src="../function/rupiah.js"></script>
 </body>
 </html>

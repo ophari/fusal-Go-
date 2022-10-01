@@ -61,20 +61,46 @@
             
                 <label for="">Id Pendaftar</label>
                 <input type="text"  name="id_pendaftar" value="<?php echo $data['id_pendaftar'] ?>" readonly>
-                <label for=""></label>
+
+                <label for="">nama pendaftar</label>
+                <input type="text" name="nama_pendaftar" value="<?php echo $data['nama_pendaftar'] ?>">
+
+                <label for="">Nomor hp</label>
+                <input type="int" name="nomor_hp" value="<?php echo $data['nomor_hp'] ?>">
+
+                <label for="">Alamat</label>
+                
+                <input type="text" name="alamat" value="<?php echo $data['alamat'] ?>">
+
+                <label for="">jenis lapangan</label>
                 <select name="jenis_lapangan" id="">
-                <option value="A">Lapangan A (Matras)</option>
-                <option value="B">Lapangan B (Sintetis)</option>
-                <option value="C">Lapangan C (Vinyl)</option>
+                <option value="A (Matras)">Lapangan A (Matras)</option>
+                <option value="B (Sintetis)">Lapangan B (Sintetis)</option>
+                <option value="C (Vinyl)">Lapangan C (Vinyl)</option>
                 </select>
+
+                <label for="">jam mulai</label>
                 <input type="time" placeholder="jam mulai" name="jam_mulai" value="<?php echo $data['jam_mulai'] ?>">
-                <label for=""></label>
+                
+                <label for="">jam selesai</label>
                 <input type="time" placeholder="jam selesai" name="jam_selesai" value="<?php echo $data['jam_selesai'] ?>">
 
-            <button type="submit" class="col-sm-3 col-form-label">Kirim</button>
-            </div>
+                <label for="">Jenis Pembayaran</label>
+                <select name="jenis_pembayaran" id="" value="<?php echo $data['jenis_pembayaran'] ?>">
+                    <option value="cash">Cash</option>
+                    <option value="Transfer">Transfer</option>
+                    <option value="ovo">ovo</option>
+                    <option value="gopay">gopay</option>
+                </select>
+
+                <label for="">Rupiah</label>
+                <input type="text" name="nominal_pembayaran" id="dengan-rupiah" value="<?php echo $data['nominal_pembayaran'] ?>">
+                
+            
             <div class="col-sm-3 d-grid">
-                <a class="btn btn-outline-primary" href="data_lapangan.php" name="proses" role="button">Cancel</a>
+                <button type="submit" class="col-sm-3 col-form-label">Kirim</button>
+            </div>
+                <a class="btn btn-outline-primary" href="../admin/data_pendaftar.php" name="proses" role="button">Cancel</a>
             </div>
           </div>
         </form>
@@ -83,5 +109,6 @@
     break;
     }
     ?>
+    <script src="../function/rupiah.js"></script>
 </body>
 </html>

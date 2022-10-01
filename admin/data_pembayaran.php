@@ -48,13 +48,13 @@
 <body>
     <ul class="menu">
         <li class="menu-list"> <a href="../admin/welcome.php">Back to home</a></li>
-        <li class="menu-list"> <a href="#">Tambah data</a></li>
+        <li class="menu-list"> <a href="../form/pembayaran.php">Tambah data</a></li>
         
     </ul>
     <h1>Table Pembayaran</h1>
     <table border="1" align="center" cellpadding = "10" cellspacing ="1">
         <tr>
-            <th align="center">id</th>
+            <th align="center">no</th>
             <th align="center">id pembayaran</th>
             <th align="center">id pendaftar</th>
             <th align="center">jenis lapangan</th>
@@ -64,10 +64,12 @@
             <th align="center">action</th>
         </tr>
         <?php
+            $i=0;
             $query = mysqli_query($koneksi, "SELECT * FROM data_pembayaran");
             while($data = mysqli_fetch_array($query)){ ?>
+            <?php $i++ ?>
             <tr>
-                <td align="center"><?= $data['id'];?></td>
+                <td><?php echo $i ?></td>
                 <td align="center"><?= $data['id_pembayaran'];?></td>
                 <td align="center"><?= $data['id_pendaftar'];?></td>
                 <td align="center"><?= $data['jenis_lapangan'];?></td>
