@@ -115,6 +115,8 @@ if (isset($_POST['submit'])) {
                 <p class="text">Anda belum ada akun? <a href="./form/registrasi.php" class="link">Register</a></p>
             </form>
         </div>
+
+        <img src="/asset/img/sintetis.jpeg" alt="">
      <!-- </div> -->
 </body>
 </html>
